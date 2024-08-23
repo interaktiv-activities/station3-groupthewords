@@ -1,0 +1,288 @@
+/*SITE SETUP*/
+html{
+    scroll-behavior: smooth;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+img {
+    width: 100%;
+}
+
+:root{
+--color-dark-blue:#152040; /* darkblue */
+--color-blue:#0588A6; /* blue */
+--color-beige-white:#FFF9ED;/* white */
+--color-light-blue:#07C4D9; /* aqua */
+--color-yellow:#FDAF2B; /* yellow */
+--color-light-yellow:#FFE69B; /* light yellow */
+--color-red-1:#D14242; /* red */
+}
+
+
+
+/* FONTS */
+@font-face {
+    font-family: MoonGet;
+    src: url(fonts/moon_get-Heavy.ttf)
+}   
+
+@font-face {
+    font-family: Neue;
+    src: url(fonts/NeueHaasUnica/NeueHaasUnica-Bold.ttf)
+}   
+
+@font-face{
+    font-family: BuiltTitling;
+    src: url(fonts/BuiltTitling/built\ titling\ bd.ttf)
+}
+
+
+/*GAME STYLES*/
+.game-board {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 30px;
+}
+
+.question-prompt {
+    padding-top: 50px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.round {
+    color: #FFF9ED;
+    text-align: center;
+    font-family: Neue;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 27px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.question {
+    color: #FFF9ED;
+    text-align: center;
+    font-family: Neue;
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 27px;
+    margin-top: 50px;
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.grid {
+    display: grid;
+    gap: 3px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.cell {
+    width: 250px;
+    height: 100px;
+    border: 5px solid #0588A6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    background-color: #07C4D9;
+
+    color: #FFF9ED;
+    -webkit-text-stroke: 1px #152040;
+    text-align: center;
+    font-family: MoonGet;
+    font-size: 16px;
+    font-style: normal;
+
+    border-radius: 15px;
+}
+
+.cell.selected {
+    background-color: #F2B84B;
+    border: 5px solid #da9216;
+
+}
+
+.group-btn {
+    background-color: #FDAF2B;
+
+    height: 60px;
+    width: 220px;
+    border-radius: 10px;
+
+    color: white;
+    text-align: center;
+    font-family: MoonGet;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.game-submit-btn:hover{
+    background-color: #0588A6;
+}
+
+.clock{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    margin-left: 1100px;
+}
+
+
+.timer-icon {
+    width: 28px;
+    height: 28px;
+    margin-right: 5px;
+
+    position: relative;
+
+    background-color: transparent;
+}
+
+.timer{
+    font-family: MoonGet;
+    font-size: 28px;
+    color: #FDAF2B;
+}
+
+.mistakes-text{
+    font-family: MoonGet;
+    font-size: 28px;
+    margin-right: 5px;
+    color: #F2B84B;
+}
+
+.mistake-box {
+    width: 20px;
+    height: 20px;
+    background-color: lightgray;
+    border: 1px solid #ccc;
+    margin: 0 5px;
+    display: inline-block;
+}
+
+.mistakes-counter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 480px;
+}
+
+.mistake-box.red {
+    background-color: red;
+}
+
+/*MEDIA QUERIES*/
+
+@media only screen and (max-width: 768px){   
+    .cell {
+        width: 130px;
+        height: 70px;
+
+        font-size: 13px;
+    }
+
+    .clock{
+        margin-left: 500px;
+    }
+    
+    .timer-icon {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .timer{
+        font-family: MoonGet;
+        font-size: 20px;
+        color: #F2B84B;
+    }
+
+    .mistakes-text{
+        font-size: 20px;
+    }
+
+    .mistakes-counter {
+        margin-right: 200px;
+    }
+
+    .mistake-box {
+        width: 15px;
+        height: 15px;
+    }
+
+    }
+    
+    @media only screen and (max-width: 428px){
+        .game-board {
+            width: 100%;
+            gap: 20px;
+        }
+
+        .question-prompt {
+            padding-top: 0px;
+        }
+
+        .question {
+            font-size: 19px;
+            max-width: 80%;
+        }
+
+        .cell {
+            width: 80px;
+            height: 70px;
+    
+            font-size: 8px;
+        }
+    
+        .clock{
+            margin-left: 280px;
+        }
+        
+        .timer-icon {
+            width: 15px;
+            height: 15px;
+        }
+        
+        .timer{
+            font-family: MoonGet;
+            font-size: 15px;
+            color: #F2B84B;
+        }
+    
+        .mistakes-text{
+            font-size: 15px;
+        }
+    
+        .mistakes-counter {
+            margin-right: 100px;
+        }
+    
+        .mistake-box {
+            width: 10px;
+            height: 10px;
+
+            margin: 0 2px;
+        }
+    
+    }

@@ -1,0 +1,72 @@
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Module 03: Mastering the Modalities!!</title>
+        <link href="site-style.css" rel="stylesheet">
+        <link href="game-style.css" rel="stylesheet">
+        <link rel="shortcut icon" type="image/png" href="favicon.png">
+        <script defer src="script.js"></script>
+    </head>
+
+    <body>
+        <div class="overlay start-screen" id="start-screen">
+            <span class="start-title">Ready to start<br>your adventure?</span>
+            <span class="start-header">Swipe the card to start the game!</span>
+            <div class="card-slot">
+                <img src="assets\start\top-card.png" class="front-scn" id="front-scn" draggable="false">
+                <img src="assets\start\card.png" class="card-img" id="swipe-card" draggable="false">
+                <img src="assets\start\bottom-card.png" class="back-scn" id="back-scn" draggable="false">
+            </div>
+        </div>
+
+        <div class="header" id="header">
+            <a href="https://interaktiv.benilde.edu.ph/?page_id=19999"><button class="left-header-btn header-btn" id="back-header-btn"><img id="back-btn-img" class="header-btn-img" src="assets/header/back.png"></button></a>
+            <button class="right-header-btn header-btn" id="mute-header-btn"><img id="mute-btn-img" class="header-btn-img" src="assets/header/unmute.png"></button>
+        </div>
+        
+        <!-- GAME PROPER -->
+         <div class="game-board" id="game-board">
+
+            <div class="question-prompt">
+                <span class="round" id="round"></span>
+                <span class="question" id="question"></span>
+            </div>
+
+            <div class="grid" id="grid"></div>
+
+            <div class="mistakes-counter" id="mistakes-counter">
+                <span class="mistakes-text">Mistakes</span>
+                <div class="mistake-box"></div>
+                <div class="mistake-box"></div>
+                <div class="mistake-box"></div>
+                <div class="mistake-box"></div>
+
+                <div class="clock">
+                    <img class="timer-icon" src="assets\clock.png">
+                    <span class="timer" id="timer">3:00</span>
+                </div>
+            </div>
+
+            <button class="group-btn" id="group-btn" >Group</button>
+        </div>
+
+
+        <!-- OVERLAYS -->
+
+        <div class="overlay end-screen" id="pass-end-screen">
+            <img src="assets\module3-navigationkeychain.png" class="token-img">
+            <div class="end-message">Congratulations! You have earned the</div>
+            <div class="end-title">NAVIGATION KEYCHAIN!</div>
+            <div class="end-message"> The secret code for the next station is <b>Navigation!</b> The expedition has ended and you can click the button bellow to head back to the station menu!</div>
+            <a href="https://interaktiv.benilde.edu.ph/?page_id=19999"><button class="menu-btn" id="menu-btn"><img class="menu-btn-img" src="assets/menu-btn.png"></button></a>
+        </div>
+
+        <div class="overlay end-screen" id="fail-end-screen">
+            <div class="end-title">PLEASE TRY AGAIN</div>
+            <div class="end-message">You were unable to reach the minimum passing score. Refresh your the window to try again!</div>
+        </div>
+    </body>
+
+</html>
